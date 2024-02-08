@@ -1,9 +1,9 @@
 import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
-import 'package:assignment_task/Shortcuts/cashier_screen.dart';
-import 'package:assignment_task/Shortcuts/home_screen.dart';
-import 'package:assignment_task/Shortcuts/menu_screen.dart';
-import 'package:assignment_task/Shortcuts/raceScreen.dart';
-import 'package:assignment_task/Shortcuts/result_screen.dart';
+import 'package:assignment_task/User/Shortcuts/cashier_screen.dart';
+import 'package:assignment_task/User/Shortcuts/home_screen.dart';
+import 'package:assignment_task/User/Shortcuts/menu_screen.dart';
+import 'package:assignment_task/User/Shortcuts/raceScreen.dart';
+import 'package:assignment_task/User/Shortcuts/result_screen.dart';
 import 'package:assignment_task/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

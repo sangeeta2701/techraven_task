@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "888545037317",
+    "project_id": "techraven-task-29587",
+    "storage_bucket": "techraven-task-29587.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:888545037317:android:23ae3cff2e80ff5e21a06c",
+        "android_client_info": {
+          "package_name": "com.example.assignment_task"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAr2Brty9aE2C5zmYDsOkattvqZmUIkteo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

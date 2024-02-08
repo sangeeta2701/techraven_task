@@ -1,14 +1,13 @@
-import 'package:assignment_task/screens/otp_screen.dart';
+import 'package:assignment_task/User/screens/otp_screen.dart';
 import 'package:assignment_task/utils/colors.dart';
 import 'package:assignment_task/widgets/dialogs/error_dialog.dart';
 import 'package:assignment_task/widgets/sizedbox.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 
-import '../widgets/dialogs/loading_dialog.dart';
+import '../../widgets/dialogs/loading_dialog.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});

@@ -1,4 +1,4 @@
-import 'package:assignment_task/screens/mainScreen.dart';
+import 'package:assignment_task/User/screens/mainScreen.dart';
 import 'package:assignment_task/utils/colors.dart';
 import 'package:assignment_task/widgets/sizedbox.dart';
 import 'package:flutter/material.dart';

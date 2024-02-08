@@ -1,9 +1,17 @@
-import 'package:assignment_task/screens/login_screen.dart';
+import 'package:assignment_task/User/screens/login_screen.dart';
+import 'package:assignment_task/splash_screen.dart';
 import 'package:assignment_task/utils/colors.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-void main() {
+import 'firebase_options.dart';
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 
@@ -20,17 +28,16 @@ class MyApp extends StatelessWidget {
       builder: (_, child) {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
-          
+
           theme: ThemeData(
             primaryColor: themeColor,
             primarySwatch: Colors.amber,
-           
           ),
+
           // home: SignInScreen(),
-          home: LoginScreen(),
+          home: SplashScreen(),
         );
       },
     );
   }
 }
-
