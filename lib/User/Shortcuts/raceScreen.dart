@@ -52,61 +52,63 @@ class _RaceScreenState extends State<RaceScreen> {
           width12,
         ],
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          height16,
-          CarouselSlider(
-              items: imgList
-                  .map((item) => Container(
-                        // height: 50.h,
-                        width: double.infinity,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(8),
-                            image: DecorationImage(
-                                image: AssetImage(item), fit: BoxFit.cover)),
-                      ))
-                  .toList(),
-              options: CarouselOptions(
-                viewportFraction: 0.9,
-                enlargeCenterPage: true,
-                aspectRatio: 5 / 1,
-                onPageChanged: (index, reason) {
-                  setState(() {
-                    currentIndex = index;
-                  });
-                },
-              )),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: imgList.map((url) {
-              int index = imgList.indexOf(url);
-              return Container(
-                width: 8.w,
-                height: 8.h,
-                margin: EdgeInsets.symmetric(vertical: 10, horizontal: 3),
-                decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: currentIndex == index
-                        ? bColor
-                        : gColor.withOpacity(0.2)),
-              );
-            }).toList(),
-          ),
-          height12,
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16),
-            child: Column(
-              children: [
-                raceDetailContainer(),
-                height20,
-                raceDetailContainer(),
-                height20,
-                raceDetailContainer(),
-              ],
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            height16,
+            CarouselSlider(
+                items: imgList
+                    .map((item) => Container(
+                          // height: 50.h,
+                          width: double.infinity,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(8),
+                              image: DecorationImage(
+                                  image: AssetImage(item), fit: BoxFit.cover)),
+                        ))
+                    .toList(),
+                options: CarouselOptions(
+                  viewportFraction: 0.9,
+                  enlargeCenterPage: true,
+                  aspectRatio: 5 / 1,
+                  onPageChanged: (index, reason) {
+                    setState(() {
+                      currentIndex = index;
+                    });
+                  },
+                )),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: imgList.map((url) {
+                int index = imgList.indexOf(url);
+                return Container(
+                  width: 8.w,
+                  height: 8.h,
+                  margin: EdgeInsets.symmetric(vertical: 10, horizontal: 3),
+                  decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: currentIndex == index
+                          ? bColor
+                          : gColor.withOpacity(0.2)),
+                );
+              }).toList(),
             ),
-          ),
-        ],
+            height12,
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: Column(
+                children: [
+                  raceDetailContainer(),
+                  height20,
+                  raceDetailContainer(),
+                  height20,
+                  raceDetailContainer(),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -234,7 +236,8 @@ class _RaceScreenState extends State<RaceScreen> {
                                         padding: const EdgeInsets.symmetric(
                                             vertical: 8, horizontal: 12),
                                         child: Column(
-                                          mainAxisAlignment: MainAxisAlignment.center,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
                                           crossAxisAlignment:
                                               CrossAxisAlignment.start,
                                           children: [
@@ -250,60 +253,69 @@ class _RaceScreenState extends State<RaceScreen> {
                                             ),
                                             Divider(),
                                             height12,
-                                            // Row(
-                                            //   children: [
-                                            //     SizedBox(
-                                            //       width: 60,
-                                            //       child: Text(
-                                            //                                                   "User Name:",
-                                            //                                                   style: TextStyle(
-                                            //       fontSize: 11.sp,
-                                            //       fontWeight: FontWeight.w400,
-                                            //       color: gColor,
-                                            //                                                   ),
-                                            //                                                 ),
-                                            //     ),
-                                            // width12,
-                                            // Expanded(
-                                            //   child: TextFormField(
-                                            //     controller: nameController,
-                                            //     keyboardType: TextInputType.name,
-                                            //     decoration: InputDecoration(
-                                            //       contentPadding:
-                                            //           EdgeInsets.symmetric(
-                                            //               horizontal: 12),
-                                            //       hintText: "Enter User Name:",
-                                            //       hintStyle: TextStyle(
-                                            //           fontSize: 12.sp,
-                                            //           fontWeight: FontWeight.w500,
-                                            //           color: gColor,
-                                            //           height: 1.4),
-                                            //       enabledBorder: OutlineInputBorder(
-                                            //         borderRadius:
-                                            //             BorderRadius.circular(8),
-                                            //         borderSide: BorderSide(
-                                            //             color: gColor, width: 1),
-                                            //       ),
-                                            //       focusedBorder: OutlineInputBorder(
-                                            //         borderRadius:
-                                            //             BorderRadius.circular(8),
-                                            //         borderSide: BorderSide(
-                                            //             color: themeColor,
-                                            //             width: 1),
-                                            //       ),
-                                            //     ),
-                                            //     validator: (value) {
-                                            //       if (value!.isEmpty) {
-                                            //         return "Please enter required field";
-                                            //       } else {
-                                            //         return null;
-                                            //       }
-                                            //     },
-                                            //   ),
-                                            // ),
-                                            //   ],
-                                            // ),
-
+                                            Row(
+                                              children: [
+                                                SizedBox(
+                                                  width: 60,
+                                                  child: Text(
+                                                    "User Name:",
+                                                    style: TextStyle(
+                                                      fontSize: 11.sp,
+                                                      fontWeight:
+                                                          FontWeight.w400,
+                                                      color: gColor,
+                                                    ),
+                                                  ),
+                                                ),
+                                                width12,
+                                                Expanded(
+                                                  child: TextFormField(
+                                                    controller:
+                                                        authServices.name,
+                                                    keyboardType:
+                                                        TextInputType.name,
+                                                    decoration: InputDecoration(
+                                                      contentPadding:
+                                                          EdgeInsets.symmetric(
+                                                              horizontal: 12),
+                                                      hintText:
+                                                          "Enter User Name:",
+                                                      hintStyle: TextStyle(
+                                                          fontSize: 12.sp,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                          color: gColor,
+                                                          height: 1.4),
+                                                      enabledBorder:
+                                                          OutlineInputBorder(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(8),
+                                                        borderSide: BorderSide(
+                                                            color: gColor,
+                                                            width: 1),
+                                                      ),
+                                                      focusedBorder:
+                                                          OutlineInputBorder(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(8),
+                                                        borderSide: BorderSide(
+                                                            color: themeColor,
+                                                            width: 1),
+                                                      ),
+                                                    ),
+                                                    validator: (value) {
+                                                      if (value!.isEmpty) {
+                                                        return "Please enter required field";
+                                                      } else {
+                                                        return null;
+                                                      }
+                                                    },
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
                                             height12,
                                             Row(
                                               children: [
@@ -450,6 +462,8 @@ class _RaceScreenState extends State<RaceScreen> {
                                                     if (authServices.email !=
                                                             null &&
                                                         authServices.password !=
+                                                            null &&
+                                                        authServices.name !=
                                                             null) {
                                                       authServices.RegisterUser(
                                                           context);

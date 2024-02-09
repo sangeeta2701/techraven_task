@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 class AuthServices {
   final auth = FirebaseAuth.instance;
   TextEditingController email = TextEditingController();
+  TextEditingController name = TextEditingController();
   TextEditingController password = TextEditingController();
   TextEditingController adminemail = TextEditingController();
   TextEditingController adminpassword = TextEditingController();
@@ -29,6 +30,7 @@ class AuthServices {
         firestore.collection("user").add({
           "email": email.text,
           "password": password.text,
+          "name": name.text,
           "uid": auth.currentUser!.uid,
         });
       });
@@ -68,16 +70,16 @@ class AuthServices {
           Navigator.push(context,
               MaterialPageRoute(builder: (context) => AdminHomeScreen()));
         }
-      }).catchError((e){
+      }).catchError((e) {
         Navigator.pop(context);
-      // ignore: use_build_context_synchronously
-      showDialog(
-          context: context,
-          builder: (context) {
-            return AlertDialog(
-              title: Text(e.toString()),
-            );
-          });
+        // ignore: use_build_context_synchronously
+        showDialog(
+            context: context,
+            builder: (context) {
+              return AlertDialog(
+                title: Text(e.toString()),
+              );
+            });
       });
     } catch (e) {
       // ignore: use_build_context_synchronously
